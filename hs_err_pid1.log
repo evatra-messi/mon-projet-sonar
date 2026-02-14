@@ -1,0 +1,648 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0x00007672f3877dd6, pid=1, tid=29
+#
+# JRE version: OpenJDK Runtime Environment Corretto-21.0.9.11.1 (21.0.9+11) (build 21.0.9+11-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Corretto-21.0.9.11.1 (21.0.9+11-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# 
+, SIGBUS (0x7) at pc=0x00007672f471e330]
+# No core dump will be written. 
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/corretto/corretto-21/issues/
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Djava.awt.headless=true -Dscanner.home=/opt/sonar-scanner -Dproject.home=/usr/src org.sonarsource.scanner.cli.Main -Dsonar.working.directory=/tmp/.scannerwork -Dsonar.projectKey=mon-projet-test -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_8638e6788e595897f81aa9590b852875b3148430
+
+Host: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz, 4 cores, 3G, Amazon Linux release 2023.9.20251117 (Amazon Linux)
+
+[error occurred during error reporting (printing date and time), id 0x7, SIGBUS (0x7) at pc=0x00007672f451a9c3]
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007672ec0e7340):  JavaThread "C1 CompilerThread0" daemon [_thread_in_vm, id=29, stack(0x00007672d47c9000,0x00007672d48c9000) (1024K)]
+
+
+Current CompileTask:
+C1:194041 3704       3       java.lang.String::encodeUTF8 (141 bytes)
+
+Stack: [0x00007672d47c9000,0x00007672d48c9000],  sp=0x00007672d48c6470,  free space=1013k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+[error occurred during error reporting (printing native stack (with source info)), id 0x7, SIGBUS (0x7) at pc=0x00007672f471e330]
+
+Retrying call stack printing without source information...
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+[error occurred during error reporting (retry printing native stack (no source info)), id 0x7, SIGBUS (0x7) at pc=0x00007672f471e330]
+
+siginfo: si_signo: 7 (SIGBUS), si_code: 2 (BUS_ADRERR), si_addr: 0x0000767277027870
+Error accessing class data sharing archive. Mapped file inaccessible during execution, possible disk/network problem.
+Registers:
+RAX=0x000000000000002c, RBX=0x0000000000000001, RCX=0x0000000000000059, RDX=0x0000767277027868
+RSP=0x00007672d48c6470, RBP=0x00007672d48c6480, RSI=0x0000767277487bb0, RDI=0x0000767277657928
+R8 =0x0000000000000000, R9 =0x000000000000002d, R10=0x0000767277487bc8, R11=0x0000000000000000
+R12=0x0000767277487bc8, R13=0x0000767277024ba0, R14=0x0000767277487bb0, R15=0x0000767277487bc8
+RIP=0x00007672f3877dd6, EFLAGS=0x0000000000010203, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+XMM[0]=0x0000000000000000 0x0000000000000000
+XMM[1]=0x0000767277487bc8 0x0000767277487bb0
+XMM[2]=0x0000000000000000 0x0000000000000000
+XMM[3]=0x000076724c0328d8 0x000076724c0fef28
+XMM[4]=0x0000000000000000 0x0000000000000000
+XMM[5]=0x000076724c3939b0 0x000076724c3938a8
+XMM[6]=0x000076724c3939b0 0x000076724c3938a8
+XMM[7]=0x000076724c393a30 0x000076724c393ac8
+XMM[8]=0xf11eba490008fdf4 0xe8241c8948fffffc
+XMM[9]=0x0000000000000000 0x0000000000000005
+XMM[10]=0x0000000000000000 0x0000000000000003
+XMM[11]=0x0000000000000000 0x0000000000000003
+XMM[12]=0x0000000000000000 0x0000000000000001
+XMM[13]=0x0000000000000000 0x0000000000000001
+XMM[14]=0x0000000000000000 0x0000000000000002
+XMM[15]=0x0000000000000000 0x0000000000000000
+  MXCSR=0x00001fa2
+
+
+Register to memory mapping:
+
+RAX=
+[error occurred during error reporting (printing register info), id 0x7, SIGBUS (0x7) at pc=0x00007672f471e330]
+RBX=
+[error occurred during error reporting (printing register info, attempt 2), id 0x7, SIGBUS (0x7) at pc=0x00007672f471e330]
+RCX=
+[error occurred during error reporting (printing register info, attempt 3), id 0x7, SIGBUS (0x7) at pc=0x00007672f471e330]
+Top of Stack: (sp=0x00007672d48c6470)
+0x00007672d48c6470:   0000000000000000 0000767277487bc8
+0x00007672d48c6480:   00007672d48c64b0 00007672f38781c2
+0x00007672d48c6490:   000076724c3942c0 0000000000000000
+0x00007672d48c64a0:   0000000000000001 0000767277024ba0
+0x00007672d48c64b0:   00007672d48c64f0 00007672f3b1a2dc
+0x00007672d48c64c0:   0000767277001208 00007672d48c6860
+0x00007672d48c64d0:   00007672ec0e7340 00007672d48c67f0
+0x00007672d48c64e0:   0000767277024ba0 0000767277487bc8
+0x00007672d48c64f0:   00007672d48c6670 00007672f3b1bf83
+0x00007672d48c6500:   0000000000000000 0000000000000000
+0x00007672d48c6510:   0000000000000001 0000767277000e90
+0x00007672d48c6520:   00007672d48c6560 557774396583d900
+0x00007672d48c6530:   0000000000000001 00007672d48c68c0
+0x00007672d48c6540:   00007672ec0e7340 0000000000000000
+0x00007672d48c6550:   0000767277000e90 00007672ec0e7270
+0x00007672d48c6560:   00007672d48c66e0 00007672f3b1bfff
+0x00007672d48c6570:   0000767277002318 00007672ec0e7270
+0x00007672d48c6580:   00007672d48c6700 00007672f3b1bfff
+0x00007672d48c6590:   000076724c0fe2c0 00007672f3d3aded
+0x00007672d48c65a0:   0000000000000001 557774396583d900
+0x00007672d48c65b0:   00007672d48c6610 00007672d48c6740
+0x00007672d48c65c0:   00007672ec0e7340 557774396583d900
+0x00007672d48c65d0:   00007672d48c6708 00007672d48c6760
+0x00007672d48c65e0:   00007672ec0e7340 00007672ec0e7340
+0x00007672d48c65f0:   00007672d48c6728 0000767277483e60
+0x00007672d48c6600:   00007672d48c6710 00007672f3b1f0b6
+0x00007672d48c6610:   0000000000000000 0000000000000000
+0x00007672d48c6620:   000076724c0fb040 00007672580037e8
+0x00007672d48c6630:   000076724c0fbf5d 557774396583d900
+0x00007672d48c6640:   0000000000000000 0000000000000000
+0x00007672d48c6650:   00007672ec0e7340 00007672d48c67f0
+0x00007672d48c6660:   00007672d48c6860 0000767277487bc8 
+
+Instructions: (pc=0x00007672f3877dd6)
+0x00007672f3877cd6:   04 24 48 8d 0d 21 c3 ff ff 48 8b 00 48 39 c8 75
+0x00007672f3877ce6:   59 49 8b 7c 24 10 48 8d 35 65 9b 83 00 31 c0 e8
+0x00007672f3877cf6:   16 e6 42 00 49 8b 54 24 08 49 8b 74 24 10 4c 89
+0x00007672f3877d06:   f7 48 85 d2 75 9c e8 5f af ea ff 49 8b 7c 24 10
+0x00007672f3877d16:   41 83 c7 01 e8 f1 ec 42 00 41 39 df 75 9c 48 8d
+0x00007672f3877d26:   7d c0 e8 93 e9 fb ff 48 83 c4 38 5b 41 5c 41 5d
+0x00007672f3877d36:   41 5e 41 5f 5d c3 0f 1f 40 00 4c 89 f6 4c 89 e7
+0x00007672f3877d46:   ff d0 e9 6a ff ff ff 0f 1f 00 4c 63 07 45 85 c0
+0x00007672f3877d56:   7e 38 31 c0 eb 0d 0f 1f 40 00 48 83 c0 01 49 39
+0x00007672f3877d66:   c0 74 27 48 8b 54 c7 08 41 89 c1 48 8b 52 08 0f
+0x00007672f3877d76:   b7 4a 24 48 8b 52 08 48 3b 74 ca 48 75 dc 44 89
+0x00007672f3877d86:   c8 c3 0f 1f 84 00 00 00 00 00 41 b9 ff ff ff ff
+0x00007672f3877d96:   44 89 c8 c3 66 0f 1f 44 00 00 55 80 3d 29 00 c1
+0x00007672f3877da6:   00 00 49 89 d2 45 89 c3 48 89 e5 41 54 53 89 cb
+0x00007672f3877db6:   75 58 8b 07 45 31 c0 8d 48 ff 41 39 c8 7f 2f 41
+0x00007672f3877dc6:   8d 04 08 d1 f8 44 8d 48 01 49 63 d1 48 8b 14 d7
+0x00007672f3877dd6:   48 8b 52 08 44 0f b7 62 24 48 8b 52 08 4a 39 74
+0x00007672f3877de6:   e2 48 72 1e 74 2e 8d 48 ff 41 39 c8 7e d1 41 b8
+0x00007672f3877df6:   ff ff ff ff 5b 44 89 c0 41 5c 5d c3 66 0f 1f 44
+0x00007672f3877e06:   00 00 45 89 c8 eb b3 0f 1f 00 e8 3b ff ff ff 83
+0x00007672f3877e16:   f8 ff 74 da 48 63 c8 48 83 c1 01 4c 8b 0c cf 49
+0x00007672f3877e26:   8b 51 08 44 0f b7 62 26 4c 8b 42 08 4f 3b 54 e0
+0x00007672f3877e36:   48 0f 84 a3 01 00 00 89 c2 83 ea 01 0f 88 1c 03
+0x00007672f3877e46:   00 00 41 83 fb 01 0f 84 de 00 00 00 48 63 d2 83
+0x00007672f3877e56:   fb 01 0f 84 9e 00 00 00 eb 14 45 0f b7 49 26 4f
+0x00007672f3877e66:   3b 54 cb 48 74 8e 48 83 ea 01 85 d2 78 1c 4c 8b
+0x00007672f3877e76:   4c d7 08 41 89 d0 4d 8b 49 08 4d 8b 59 08 41 0f
+0x00007672f3877e86:   b7 59 24 49 3b 74 db 48 74 d0 8b 17 83 c0 01 39
+0x00007672f3877e96:   c2 7f 22 e9 56 ff ff ff 66 90 0f b7 40 26 4d 3b
+0x00007672f3877ea6:   54 c1 48 0f 84 4b ff ff ff 48 83 c1 01 39 ca 0f
+0x00007672f3877eb6:   8e 39 ff ff ff 48 8b 44 cf 08 41 89 c8 48 8b 40
+0x00007672f3877ec6:   08 4c 8b 48 08 44 0f b7 58 24 4b 3b 74 d9 48 74 
+
+
+Stack slot to memory mapping:
+
+stack at sp + 0 slots: 0x0 is null
+stack at sp + 1 slots: 0x0000767277487bc8 is pointing into metadata
+
+Heap address: 0x00000000c3600000, size: 970 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000767277000000-0x0000767277c92000-0x0000767277c92000), size 13180928, SharedBaseAddress: 0x0000767277000000, ArchiveRelocationMode: 1.
+Compressed class space mapped at: 0x0000767278000000-0x00007672b8000000, reserved size: 1073741824
+Narrow klass base: 0x0000767277000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+
+GC Precious Log:
+
+[error occurred during error reporting (printing heap information), id 0x7, SIGBUS (0x7) at pc=0x00007672f46368bd]
+Metaspace:
+
+Usage:
+  Non-class:     17.36 MB used.
+      Class:      2.30 MB used.
+       Both:     19.66 MB used.
+
+Virtual space:
+  Non-class space:       64.00 MB reserved,      17.56 MB ( 27%) committed,  1 nodes.
+      Class space:        1.00 GB reserved,       2.50 MB ( <1%) committed,  1 nodes.
+             Both:        1.06 GB reserved,      20.06 MB (  2%) committed. 
+
+Chunk freelists:
+   Non-Class:  14.48 MB
+       Class:  13.48 MB
+        Both:  27.96 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 21.00 MB
+CDS: on
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+ - use_allocation_guard: 0.
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 0.
+num_arena_births: 410.
+num_arena_deaths: 0.
+num_vsnodes_births: 2.
+num_vsnodes_deaths: 0.
+num_space_committed: 321.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 0.
+num_chunks_taken_from_freelist: 947.
+num_chunk_merges: 0.
+num_chunk_splits: 598.
+num_chunks_enlarged: 393.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=120032Kb used=1950Kb max_used=1950Kb free=118081Kb
+ bounds [0x00007672dc491000, 0x00007672dc701000, 0x00007672e39c9000]
+CodeHeap 'profiled nmethods': size=120028Kb used=7300Kb max_used=7300Kb free=112727Kb
+ bounds [0x00007672d49c9000, 0x00007672d50f9000, 0x00007672dbf00000]
+CodeHeap 'non-nmethods': size=5700Kb used=1496Kb max_used=1536Kb free=4204Kb
+ bounds [0x00007672dbf00000, 0x00007672dc170000, 0x00007672dc491000]
+CodeCache: size=245760Kb, used=10746Kb, max_used=10786Kb, free=235012Kb
+ total_blobs=4286, nmethods=3698, adapters=493, full_count=0
+Compilation: enabled, stopped_count=0, restarted_count=0
+
+Compilation events (20 events):
+Event: 101.079 Thread 0x00007672ec0e5c80 nmethod 3690 0x00007672dc66fb90 code [0x00007672dc66fd60, 0x00007672dc670068]
+Event: 102.873 Thread 0x00007672ec0e7340 3695       3       java.lang.reflect.AccessibleObject::checkCanSetAccessible (9 bytes)
+Event: 102.874 Thread 0x00007672ec0e7340 nmethod 3695 0x00007672d50e3610 code [0x00007672d50e37c0, 0x00007672d50e3900]
+Event: 102.874 Thread 0x00007672ec0e7340 3696       3       java.lang.reflect.AccessibleObject::checkCanSetAccessible (195 bytes)
+Event: 102.886 Thread 0x00007672ec0e7340 nmethod 3696 0x00007672d50e3990 code [0x00007672d50e3d20, 0x00007672d50e5280]
+Event: 102.887 Thread 0x00007672ec0e7340 3697       3       java.lang.reflect.AccessibleObject::setAccessible0 (7 bytes)
+Event: 102.887 Thread 0x00007672ec0e7340 nmethod 3697 0x00007672d50e5990 code [0x00007672d50e5b20, 0x00007672d50e5c30]
+Event: 102.888 Thread 0x00007672ec0e7340 3698       3       com.google.gson.reflect.TypeToken::get (9 bytes)
+Event: 102.889 Thread 0x00007672ec0e7340 nmethod 3698 0x00007672d50e5c90 code [0x00007672d50e5e40, 0x00007672d50e5fc8]
+Event: 118.357 Thread 0x00007672ec0e5c80 3699   !   4       sun.nio.ch.SelectorImpl::lockAndDoSelect (87 bytes)
+Event: 120.472 Thread 0x00007672ec0e5c80 nmethod 3699 0x00007672dc670290 code [0x00007672dc6708a0, 0x00007672dc675730]
+Event: 128.727 Thread 0x00007672ec0e7340 3700       1       com.google.gson.stream.JsonReader::getStrictness (5 bytes)
+Event: 128.727 Thread 0x00007672ec0e7340 nmethod 3700 0x00007672dc678890 code [0x00007672dc678a20, 0x00007672dc678ae0]
+Event: 128.727 Thread 0x00007672ec0e7340 3701       3       com.google.gson.internal.Excluder::excludeField (207 bytes)
+Event: 128.731 Thread 0x00007672ec0e7340 nmethod 3701 0x00007672d50e6090 code [0x00007672d50e65a0, 0x00007672d50e8aa0]
+Event: 128.731 Thread 0x00007672ec0e7340 3702       3       java.lang.reflect.Field::isSynthetic (8 bytes)
+Event: 128.731 Thread 0x00007672ec0e7340 nmethod 3702 0x00007672d50e9410 code [0x00007672d50e95c0, 0x00007672d50e9790]
+Event: 128.731 Thread 0x00007672ec0e7340 3703       3       java.lang.reflect.Field::getAnnotation (23 bytes)
+Event: 128.732 Thread 0x00007672ec0e7340 nmethod 3703 0x00007672d50e9890 code [0x00007672d50e9aa0, 0x00007672d50ea120]
+Event: 187.486 Thread 0x00007672ec0e7340 3704       3       java.lang.String::encodeUTF8 (141 bytes)
+
+GC Heap History (16 events):
+Event: 2.655 
+[error occurred during error reporting (printing ring buffers), id 0x7, SIGBUS (0x7) at pc=0x00007672f35edeac]
+Dynamic libraries:
+c3600000-c8800000 rw-p 00000000 00:00 0 
+c8800000-ffe00000 ---p 00000000 00:00 0 
+ffe00000-fff0c000 rw-p 00cd1000 08:40 60200                              /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/server/classes.jsa
+fff0c000-100000000 rw-p 00000000 00:00 0 
+628ea9ece000-628ea9ecf000 r--p 00000000 08:40 59707                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/bin/java
+628ea9ecf000-628ea9ed0000 r-xp 00001000 08:40 59707                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/bin/java
+628ea9ed0000-628ea9ed1000 r--p 00002000 08:40 59707                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/bin/java
+628ea9ed1000-628ea9ed2000 r--p 00002000 08:40 59707                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/bin/java
+628ea9ed2000-628ea9ed3000 rw-p 00003000 08:40 59707                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/bin/java
+628eb0f8d000-628eb0fd4000 rw-p 00000000 00:00 0                          [heap]
+76721c000000-76721c021000 rw-p 00000000 00:00 0 
+76721c021000-767220000000 ---p 00000000 00:00 0 
+767224000000-767224021000 rw-p 00000000 00:00 0 
+767224021000-767228000000 ---p 00000000 00:00 0 
+767228000000-7672282e2000 rw-p 00000000 00:00 0 
+7672282e2000-76722c000000 ---p 00000000 00:00 0 
+76722c000000-76722c021000 rw-p 00000000 00:00 0 
+76722c021000-767230000000 ---p 00000000 00:00 0 
+767230000000-767230021000 rw-p 00000000 00:00 0 
+767230021000-767234000000 ---p 00000000 00:00 0 
+767234000000-767234021000 rw-p 00000000 00:00 0 
+767234021000-767238000000 ---p 00000000 00:00 0 
+767238000000-767238021000 rw-p 00000000 00:00 0 
+767238021000-76723c000000 ---p 00000000 00:00 0 
+76723c000000-76723c021000 rw-p 00000000 00:00 0 
+76723c021000-767240000000 ---p 00000000 00:00 0 
+767240000000-767240021000 rw-p 00000000 00:00 0 
+767240021000-767244000000 ---p 00000000 00:00 0 
+767244000000-767244021000 rw-p 00000000 00:00 0 
+767244021000-767248000000 ---p 00000000 00:00 0 
+767248000000-7672486ef000 rw-p 00000000 00:00 0 
+7672486ef000-76724c000000 ---p 00000000 00:00 0 
+76724c000000-76724c711000 rw-p 00000000 00:00 0 
+76724c711000-767250000000 ---p 00000000 00:00 0 
+767250000000-767250021000 rw-p 00000000 00:00 0 
+767250021000-767254000000 ---p 00000000 00:00 0 
+767254000000-767254021000 rw-p 00000000 00:00 0 
+767254021000-767258000000 ---p 00000000 00:00 0 
+767258000000-767258fb7000 rw-p 00000000 00:00 0 
+767258fb7000-76725c000000 ---p 00000000 00:00 0 
+76725c000000-76725c021000 rw-p 00000000 00:00 0 
+76725c021000-767260000000 ---p 00000000 00:00 0 
+767260000000-767260021000 rw-p 00000000 00:00 0 
+767260021000-767264000000 ---p 00000000 00:00 0 
+767264000000-767264021000 rw-p 00000000 00:00 0 
+767264021000-767268000000 ---p 00000000 00:00 0 
+767268000000-767268021000 rw-p 00000000 00:00 0 
+767268021000-76726c000000 ---p 00000000 00:00 0 
+76726c000000-76726c023000 rw-p 00000000 00:00 0 
+76726c023000-767270000000 ---p 00000000 00:00 0 
+767273000000-7672733f0000 rw-p 00000000 00:00 0 
+7672733f0000-767273670000 rw-p 00000000 00:00 0 
+767273670000-7672736f0000 rw-p 00000000 00:00 0 
+7672736f0000-7672738f0000 rw-p 00000000 00:00 0 
+7672738f0000-7672739f0000 rw-p 00000000 00:00 0 
+7672739f0000-767273c70000 rw-p 00000000 00:00 0 
+767273c70000-767273cf0000 rw-p 00000000 00:00 0 
+767273cf0000-767273ef0000 rw-p 00000000 00:00 0 
+767273ef0000-767273ff0000 rw-p 00000000 00:00 0 
+767273ff0000-767274190000 rw-p 00000000 00:00 0 
+767274190000-767277000000 ---p 00000000 00:00 0 
+767277000000-76727747d000 rw-p 00001000 08:40 60200                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/server/classes.jsa
+76727747d000-767277c92000 rw-p 0047e000 08:40 60200                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/server/classes.jsa
+767277c92000-767278000000 ---p 00000000 00:00 0 
+767278000000-767278030000 rw-p 00000000 00:00 0 
+767278030000-7672780f0000 rw-p 00000000 00:00 0 
+7672780f0000-767278130000 rw-p 00000000 00:00 0 
+767278130000-767278170000 rw-p 00000000 00:00 0 
+767278170000-7672781d0000 rw-p 00000000 00:00 0 
+7672781d0000-7672781f0000 rw-p 00000000 00:00 0 
+7672781f0000-767278270000 rw-p 00000000 00:00 0 
+767278270000-767278280000 ---p 00000000 00:00 0 
+767278280000-767278290000 rw-p 00000000 00:00 0 
+767278290000-7672b8000000 ---p 00000000 00:00 0 
+7672b8000000-7672b8021000 rw-p 00000000 00:00 0 
+7672b8021000-7672bc000000 ---p 00000000 00:00 0 
+7672bc000000-7672bc021000 rw-p 00000000 00:00 0 
+7672bc021000-7672c0000000 ---p 00000000 00:00 0 
+7672c0000000-7672c0021000 rw-p 00000000 00:00 0 
+7672c0021000-7672c4000000 ---p 00000000 00:00 0 
+7672c5b00000-7672c5b04000 ---p 00000000 00:00 0 
+7672c5b04000-7672c5c00000 rw-p 00000000 00:00 0 
+7672c5c00000-7672c5c04000 ---p 00000000 00:00 0 
+7672c5c04000-7672c5d00000 rw-p 00000000 00:00 0 
+7672c5d00000-7672c5d04000 ---p 00000000 00:00 0 
+7672c5d04000-7672c5e00000 rw-p 00000000 00:00 0 
+7672c5e00000-7672c5e04000 ---p 00000000 00:00 0 
+7672c5e04000-7672c5f00000 rw-p 00000000 00:00 0 
+7672c5f00000-7672c5f04000 ---p 00000000 00:00 0 
+7672c5f04000-7672c8021000 rw-p 00000000 00:00 0 
+7672c8021000-7672cc000000 ---p 00000000 00:00 0 
+7672cc000000-7672cc021000 rw-p 00000000 00:00 0 
+7672cc021000-7672d0000000 ---p 00000000 00:00 0 
+7672d0000000-7672d0021000 rw-p 00000000 00:00 0 
+7672d0021000-7672d4000000 ---p 00000000 00:00 0 
+7672d40f5000-7672d40f6000 ---p 00000000 00:00 0 
+7672d40f6000-7672d41f6000 rw-p 00000000 00:00 0 
+7672d41f6000-7672d41f7000 ---p 00000000 00:00 0 
+7672d41f7000-7672d42f7000 rw-p 00000000 00:00 0 
+7672d42f7000-7672d42f8000 ---p 00000000 00:00 0 
+7672d42f8000-7672d43f8000 rw-p 00000000 00:00 0 
+7672d43f8000-7672d43fc000 ---p 00000000 00:00 0 
+7672d43fc000-7672d44f8000 rw-p 00000000 00:00 0 
+7672d44f8000-7672d44fc000 ---p 00000000 00:00 0 
+7672d44fc000-7672d45f8000 rw-p 00000000 00:00 0 
+7672d45f8000-7672d45fc000 ---p 00000000 00:00 0 
+7672d45fc000-7672d46f8000 rw-p 00000000 00:00 0 
+7672d46f8000-7672d46fd000 r--p 00000000 08:40 60174                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjsvml.so
+7672d46fd000-7672d473e000 r-xp 00005000 08:40 60174                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjsvml.so
+7672d473e000-7672d47c7000 r--p 00046000 08:40 60174                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjsvml.so
+7672d47c7000-7672d47c8000 r--p 000ce000 08:40 60174                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjsvml.so
+7672d47c8000-7672d47c9000 rw-p 000cf000 08:40 60174                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjsvml.so
+7672d47c9000-7672d47cd000 ---p 00000000 00:00 0 
+7672d47cd000-7672d48c9000 rw-p 00000000 00:00 0 
+7672d48c9000-7672d48cd000 ---p 00000000 00:00 0 
+7672d48cd000-7672d49c9000 rw-p 00000000 00:00 0 
+7672d49c9000-7672d50f9000 rwxp 00000000 00:00 0 
+7672d50f9000-7672dbf00000 ---p 00000000 00:00 0 
+7672dbf00000-7672dc170000 rwxp 00000000 00:00 0 
+7672dc170000-7672dc491000 ---p 00000000 00:00 0 
+7672dc491000-7672dc701000 rwxp 00000000 00:00 0 
+7672dc701000-7672e39c9000 ---p 00000000 00:00 0 
+7672e39c9000-7672ec000000 r--s 00000000 08:40 60191                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/modules
+7672ec000000-7672ec6f3000 rw-p 00000000 00:00 0 
+7672ec6f3000-7672f0000000 ---p 00000000 00:00 0 
+7672f001e000-7672f001f000 r--p 00000000 08:40 60159                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libextnet.so
+7672f001f000-7672f0020000 r-xp 00001000 08:40 60159                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libextnet.so
+7672f0020000-7672f0021000 r--p 00002000 08:40 60159                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libextnet.so
+7672f0021000-7672f0022000 r--p 00002000 08:40 60159                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libextnet.so
+7672f0022000-7672f0023000 rw-p 00000000 00:00 0 
+7672f0023000-7672f0027000 ---p 00000000 00:00 0 
+7672f0027000-7672f0045000 rw-p 00000000 00:00 0 
+7672f0045000-7672f0047000 r--p 00000000 08:40 60190                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libzip.so
+7672f0047000-7672f004b000 r-xp 00002000 08:40 60190                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libzip.so
+7672f004b000-7672f004d000 r--p 00006000 08:40 60190                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libzip.so
+7672f004d000-7672f004e000 r--p 00007000 08:40 60190                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libzip.so
+7672f004e000-7672f004f000 rw-p 00000000 00:00 0 
+7672f004f000-7672f0052000 r--p 00000000 08:40 60181                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnet.so
+7672f0052000-7672f005a000 r-xp 00003000 08:40 60181                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnet.so
+7672f005a000-7672f005c000 r--p 0000b000 08:40 60181                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnet.so
+7672f005c000-7672f005d000 r--p 0000c000 08:40 60181                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnet.so
+7672f005d000-7672f005e000 rw-p 00000000 00:00 0 
+7672f005e000-7672f0065000 r--p 00000000 08:40 60182                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnio.so
+7672f0065000-7672f006e000 r-xp 00007000 08:40 60182                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnio.so
+7672f006e000-7672f0072000 r--p 00010000 08:40 60182                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnio.so
+7672f0072000-7672f0073000 r--p 00014000 08:40 60182                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnio.so
+7672f0073000-7672f0074000 rw-p 00015000 08:40 60182                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libnio.so
+7672f0074000-7672f0078000 ---p 00000000 00:00 0 
+7672f0078000-7672f0174000 rw-p 00000000 00:00 0 
+7672f0174000-7672f0178000 ---p 00000000 00:00 0 
+7672f0178000-7672f0274000 rw-p 00000000 00:00 0 
+7672f0274000-7672f0278000 ---p 00000000 00:00 0 
+7672f0278000-7672f0374000 rw-p 00000000 00:00 0 
+7672f0374000-7672f0378000 ---p 00000000 00:00 0 
+7672f0378000-7672f0474000 rw-p 00000000 00:00 0 
+7672f0474000-7672f0478000 ---p 00000000 00:00 0 
+7672f0478000-7672f0574000 rw-p 00000000 00:00 0 
+7672f0574000-7672f05c9000 r--p 00000000 08:40 53692                      /usr/lib/locale/C.utf8/LC_CTYPE
+7672f05c9000-7672f05ca000 r--p 00000000 08:40 53699                      /usr/lib/locale/C.utf8/LC_NUMERIC
+7672f05ca000-7672f05cb000 r--p 00000000 08:40 53702                      /usr/lib/locale/C.utf8/LC_TIME
+7672f05cb000-7672f05cc000 r--p 00000000 08:40 53691                      /usr/lib/locale/C.utf8/LC_COLLATE
+7672f05cc000-7672f05cd000 r--p 00000000 08:40 53697                      /usr/lib/locale/C.utf8/LC_MONETARY
+7672f05cd000-7672f05ce000 r--p 00000000 08:40 53696                      /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+7672f05ce000-7672f05cf000 r--p 00000000 08:40 53700                      /usr/lib/locale/C.utf8/LC_PAPER
+7672f05cf000-7672f05d0000 r--p 00000000 08:40 53698                      /usr/lib/locale/C.utf8/LC_NAME
+7672f05d0000-7672f05d1000 r--p 00000000 08:40 53690                      /usr/lib/locale/C.utf8/LC_ADDRESS
+7672f05d1000-7672f05d2000 r--p 00000000 08:40 53701                      /usr/lib/locale/C.utf8/LC_TELEPHONE
+7672f05d2000-7672f05d3000 r--p 00000000 08:40 53694                      /usr/lib/locale/C.utf8/LC_MEASUREMENT
+7672f05d3000-7672f05d4000 r--s 00000000 08:40 54188                      /usr/lib64/gconv/gconv-modules.cache
+7672f05d4000-7672f05d5000 r--p 00000000 08:40 53693                      /usr/lib/locale/C.utf8/LC_IDENTIFICATION
+7672f05d5000-7672f05d6000 ---p 00000000 00:00 0 
+7672f05d6000-7672f06d6000 rw-p 00000000 00:00 0 
+7672f06d6000-7672f06d7000 ---p 00000000 00:00 0 
+7672f06d7000-7672f08f4000 rw-p 00000000 00:00 0 
+7672f08f4000-7672f08f5000 ---p 00000000 00:00 0 
+7672f08f5000-7672f09f5000 rw-p 00000000 00:00 0 
+7672f09f5000-7672f09f6000 ---p 00000000 00:00 0 
+7672f09f6000-7672f0efa000 rw-p 00000000 00:00 0 
+7672f0efa000-7672f0efb000 ---p 00000000 00:00 0 
+7672f0efb000-7672f0ffb000 rw-p 00000000 00:00 0 
+7672f0ffb000-7672f0ffc000 ---p 00000000 00:00 0 
+7672f0ffc000-7672f10fc000 rw-p 00000000 00:00 0 
+7672f10fc000-7672f10fd000 ---p 00000000 00:00 0 
+7672f10fd000-7672f1366000 rw-p 00000000 00:00 0 
+7672f1366000-7672f213e000 ---p 00000000 00:00 0 
+7672f213e000-7672f2142000 rw-p 00000000 00:00 0 
+7672f2142000-7672f216f000 rw-p 00000000 00:00 0 
+7672f216f000-7672f232a000 ---p 00000000 00:00 0 
+7672f232a000-7672f2354000 rw-p 00000000 00:00 0 
+7672f2354000-7672f250f000 ---p 00000000 00:00 0 
+7672f250f000-7672f2919000 rw-p 00000000 00:00 0 
+7672f2919000-7672f29ff000 ---p 00000000 00:00 0 
+7672f29ff000-7672f2a0e000 rw-p 00000000 00:00 0 
+7672f2a0e000-7672f2aea000 ---p 00000000 00:00 0 
+7672f2aea000-7672f2aef000 rw-p 00000000 00:00 0 
+7672f2aef000-7672f2af6000 ---p 00000000 00:00 0 
+7672f2af6000-7672f2b03000 r--p 00000000 08:40 60166                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjava.so
+7672f2b03000-7672f2b11000 r-xp 0000d000 08:40 60166                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjava.so
+7672f2b11000-7672f2b16000 r--p 0001b000 08:40 60166                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjava.so
+7672f2b16000-7672f2b17000 r--p 00020000 08:40 60166                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjava.so
+7672f2b17000-7672f2b18000 rw-p 00021000 08:40 60166                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjava.so
+7672f2b18000-7672f2b19000 rw-p 00000000 00:00 0 
+7672f2b19000-7672f2b21000 rw-s 00000000 08:40 70620                      /tmp/hsperfdata_scanner-cli/1
+7672f2b21000-7672f2b23000 r--p 00000000 08:40 60170                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjimage.so
+7672f2b23000-7672f2b26000 r-xp 00002000 08:40 60170                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjimage.so
+7672f2b26000-7672f2b27000 r--p 00005000 08:40 60170                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjimage.so
+7672f2b27000-7672f2b28000 r--p 00006000 08:40 60170                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjimage.so
+7672f2b28000-7672f2b29000 rw-p 00007000 08:40 60170                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjimage.so
+7672f2b29000-7672f2b2d000 ---p 00000000 00:00 0 
+7672f2b2d000-7672f2c29000 rw-p 00000000 00:00 0 
+7672f2c29000-7672f2c2d000 r--p 00000000 08:40 54267                      /usr/lib64/libgcc_s-14-20250110.so.1
+7672f2c2d000-7672f2c51000 r-xp 00004000 08:40 54267                      /usr/lib64/libgcc_s-14-20250110.so.1
+7672f2c51000-7672f2c55000 r--p 00028000 08:40 54267                      /usr/lib64/libgcc_s-14-20250110.so.1
+7672f2c55000-7672f2c56000 r--p 0002c000 08:40 54267                      /usr/lib64/libgcc_s-14-20250110.so.1
+7672f2c56000-7672f2c57000 rw-p 00000000 00:00 0 
+7672f2c57000-7672f2c64000 r--p 00000000 08:40 54323                      /usr/lib64/libm.so.6
+7672f2c64000-7672f2cd4000 r-xp 0000d000 08:40 54323                      /usr/lib64/libm.so.6
+7672f2cd4000-7672f2d30000 r--p 0007d000 08:40 54323                      /usr/lib64/libm.so.6
+7672f2d30000-7672f2d31000 r--p 000d8000 08:40 54323                      /usr/lib64/libm.so.6
+7672f2d31000-7672f2d32000 rw-p 000d9000 08:40 54323                      /usr/lib64/libm.so.6
+7672f2d32000-7672f2dcf000 r--p 00000000 08:40 54396                      /usr/lib64/libstdc++.so.6.0.33
+7672f2dcf000-7672f2f07000 r-xp 0009d000 08:40 54396                      /usr/lib64/libstdc++.so.6.0.33
+7672f2f07000-7672f2f84000 r--p 001d5000 08:40 54396                      /usr/lib64/libstdc++.so.6.0.33
+7672f2f84000-7672f2f91000 r--p 00251000 08:40 54396                      /usr/lib64/libstdc++.so.6.0.33
+7672f2f91000-7672f2f92000 rw-p 0025e000 08:40 54396                      /usr/lib64/libstdc++.so.6.0.33
+7672f2f92000-7672f2f96000 rw-p 00000000 00:00 0 
+7672f2f96000-7672f3238000 r--p 00000000 08:40 52293                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/server/libjvm.so
+7672f3238000-7672f4092000 r-xp 002a2000 08:40 52293                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/server/libjvm.so
+7672f4092000-7672f436d000 r--p 010fc000 08:40 52293                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/server/libjvm.so
+7672f436d000-7672f4440000 r--p 013d7000 08:40 52293                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/server/libjvm.so
+7672f4440000-7672f4470000 rw-p 014aa000 08:40 52293                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/server/libjvm.so
+7672f4470000-7672f44d8000 rw-p 00000000 00:00 0 
+7672f44d8000-7672f4501000 r--p 00000000 08:40 54233                      /usr/lib64/libc.so.6
+7672f4501000-7672f4676000 r-xp 00029000 08:40 54233                      /usr/lib64/libc.so.6
+7672f4676000-7672f46ce000 r--p 0019e000 08:40 54233                      /usr/lib64/libc.so.6
+7672f46ce000-7672f46d2000 r--p 001f6000 08:40 54233                      /usr/lib64/libc.so.6
+7672f46d2000-7672f46d4000 rw-p 001fa000 08:40 54233                      /usr/lib64/libc.so.6
+7672f46d4000-7672f46e1000 rw-p 00000000 00:00 0 
+7672f46e1000-7672f46e3000 r--p 00000000 08:40 60171                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjli.so
+7672f46e3000-7672f46ed000 r-xp 00002000 08:40 60171                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjli.so
+7672f46ed000-7672f46f0000 r--p 0000c000 08:40 60171                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjli.so
+7672f46f0000-7672f46f1000 r--p 0000f000 08:40 60171                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjli.so
+7672f46f1000-7672f46f2000 rw-p 00010000 08:40 60171                      /usr/lib/jvm/java-21-amazon-corretto.x86_64/lib/libjli.so
+7672f46f2000-7672f46f5000 r--p 00000000 08:40 54416                      /usr/lib64/libz.so.1.2.11
+7672f46f5000-7672f4704000 r-xp 00003000 08:40 54416                      /usr/lib64/libz.so.1.2.11
+7672f4704000-7672f470a000 r--p 00012000 08:40 54416                      /usr/lib64/libz.so.1.2.11
+7672f470a000-7672f470b000 r--p 00018000 08:40 54416                      /usr/lib64/libz.so.1.2.11
+7672f470b000-7672f470c000 rw-p 00000000 00:00 0 
+7672f470c000-7672f470d000 ---p 00000000 00:00 0 
+7672f470d000-7672f470e000 r--p 00000000 00:00 0 
+7672f470e000-7672f470f000 ---p 00000000 00:00 0 
+7672f470f000-7672f4711000 rw-p 00000000 00:00 0 
+7672f4711000-7672f4713000 r--p 00000000 08:40 54210                      /usr/lib64/ld-linux-x86-64.so.2
+7672f4713000-7672f473b000 r-xp 00002000 08:40 54210                      /usr/lib64/ld-linux-x86-64.so.2
+7672f473b000-7672f4747000 r--p 0002a000 08:40 54210                      /usr/lib64/ld-linux-x86-64.so.2
+7672f4747000-7672f4749000 r--p 00036000 08:40 54210                      /usr/lib64/ld-linux-x86-64.so.2
+7672f4749000-7672f474b000 rw-p 00038000 08:40 54210                      /usr/lib64/ld-linux-x86-64.so.2
+7ffec72e6000-7ffec7307000 rw-p 00000000 00:00 0                          [stack]
+7ffec739a000-7ffec739e000 r--p 00000000 00:00 0                          [vvar]
+7ffec739e000-7ffec73a0000 r-xp 00000000 00:00 0                          [vdso]
+Total number of mappings: 260
+
+JVMTI agents: none
+
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Dscanner.home=/opt/sonar-scanner -Dproject.home=/usr/src 
+java_command: org.sonarsource.scanner.cli.Main -Dsonar.working.directory=/tmp/.scannerwork -Dsonar.projectKey=mon-projet-test -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_8638e6788e595897f81aa9590b852875b3148430
+java_class_path (initial): /opt/sonar-scanner/lib/sonar-scanner-cli-8.0.1.6346.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+
+[error occurred during error reporting (printing flags), id 0x7, SIGBUS (0x7) at pc=0x00007672f3995943]
+
+[error occurred during error reporting (printing warning if internal testing API used), id 0x7, SIGBUS (0x7) at pc=0x00007672f3f957bd]
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Release file:
+IMPLEMENTOR="Amazon.com Inc."
+IMPLEMENTOR_VERSION="Corretto-21.0.9.11.1"
+JAVA_RUNTIME_VERSION="21.0.9+11-LTS"
+JAVA_VERSION="21.0.9"
+JAVA_VERSION_DATE="2025-10-21"
+LIBC="gnu"
+MODULES="java.base java.compiler java.datatransfer java.xml java.prefs java.desktop java.instrument java.logging java.management java.security.sasl java.naming java.rmi java.management.rmi java.net.http java.scripting java.security.jgss java.transaction.xa java.sql java.sql.rowset java.xml.crypto java.se java.smartcardio jdk.accessibility jdk.internal.jvmstat jdk.attach jdk.charsets jdk.internal.opt jdk.zipfs jdk.compiler jdk.crypto.ec jdk.crypto.cryptoki jdk.dynalink jdk.internal.ed jdk.editpad jdk.hotspot.agent jdk.httpserver jdk.incubator.vector jdk.internal.le jdk.internal.vm.ci jdk.internal.vm.compiler jdk.internal.vm.compiler.management jdk.jartool jdk.javadoc jdk.jcmd jdk.management jdk.management.agent jdk.jconsole jdk.jdeps jdk.jdwp.agent jdk.jdi jdk.jfr jdk.jlink jdk.jpackage jdk.jshell jdk.jsobject jdk.jstatd jdk.localedata jdk.management.jfr jdk.naming.dns jdk.naming.rmi jdk.net jdk.nio.mapmode jdk.random jdk.sctp jdk.security.auth jdk.security.jgss jdk.unsupported jdk.unsupported.desktop jdk.xml.dom"
+OS_ARCH="x86_64"
+OS_NAME="Linux"
+SOURCE=""
+
+Environment Variables:
+
+[error occurred during error reporting (printing all environment variables), id 0x7, SIGBUS (0x7) at pc=0x00007672f451a9c3]
+Active Locale:
+LC_ALL=C.UTF-8
+LC_COLLATE=C.UTF-8
+LC_CTYPE=C.UTF-8
+LC_MESSAGES=C.UTF-8
+LC_MONETARY=C.UTF-8
+LC_NUMERIC=C.UTF-8
+LC_TIME=C.UTF-8
+
+Signal Handlers:
+   SIGSEGV: 
+[error occurred during error reporting (printing signal handlers), id 0x7, SIGBUS (0x7) at pc=0x00007672f471e330]
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+Amazon Linux release 2023.9.20251117 (Amazon Linux)
+uname: Linux 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64
+OS uptime: 0 days 3:38 hours
+libc: glibc 2.34 NPTL 2.34 
+rlimit (soft/hard): STACK 8192k/infinity , CORE 0k/infinity , NPROC infinity/infinity , NOFILE 1048576/1048576 , AS infinity/infinity , CPU infinity/infinity , DATA infinity/infinity , FSIZE infinity/infinity , MEMLOCK infinity/infinity
+load average: 13.98 4.20 2.48
+
+/proc/meminfo:
+MemTotal:        3970292 kB
+MemFree:         2234728 kB
+MemAvailable:    2423096 kB
+Buffers:            4308 kB
+Cached:           281064 kB
+SwapCached:         7200 kB
+Active:           254768 kB
+Inactive:        1150964 kB
+Active(anon):     112500 kB
+Inactive(anon):  1011572 kB
+Active(file):     142268 kB
+Inactive(file):   139392 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       1048576 kB
+SwapFree:         977028 kB
+Dirty:                96 kB
+Writeback:             0 kB
+AnonPages:       1113652 kB
+Mapped:           114844 kB
+Shmem:              3436 kB
+KReclaimable:      61568 kB
+Slab:             109724 kB
+SReclaimable:      61568 kB
+SUnreclaim:        48156 kB
+KernelStack:        5344 kB
+PageTables:        14248 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3033720 kB
+Committed_AS:    2482560 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       30296 kB
+VmallocChunk:          0 kB
+Percpu:             1520 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+Unaccepted:            0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:       66560 kB
+DirectMap2M:     4085760 kB
+DirectMap1G:     8388608 kB
+
+/sys/kernel/mm/transparent_hugepage/enabled: always [madvise] never
+/sys/kernel/mm/transparent_hugepage/hpage_pmd_size: 2097152
+/sys/kernel/mm/transparent_hugepage/defrag (defrag/compaction efforts parameter): always defer defer+madvise [madvise] never
+
+Process Memory:
+Virtual Size: 4396716K (peak: 4462252K)
+Resident Set Size: 164644K (peak: 190348K) (anon: 154288K, file: 10356K, shmem: 0K)
+Swapped out: 9216K
+
+[error occurred during error reporting (printing OS information), id 0x7, SIGBUS (0x7) at pc=0x00007672f456f108]
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1 microcode 0xffffffff, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, avx, avx2, aes, erms, clmul, bmi1, bmi2, fma, vzeroupper, clflush, hv, rdtscp, f16c
+CPU Model and flags from /proc/cpuinfo:
+model name	: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm pti ssbd ibrs ibpb stibp fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt md_clear flush_l1d arch_capabilities
+
+Online cpus: 0-3
+Offline cpus: 
+BIOS frequency limitation: <Not Available>
+Frequency switch latency (ns): <Not Available>
+Available cpu frequencies: <Not Available>
+Current governor: <Not Available>
+Core performance/turbo boost: <Not Available>
+
+Memory: 4k page, physical 3970292k(2423112k free), swap 1048576k(977028k free)
+Page Sizes: 4k
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.9+11-LTS) for linux-amd64 JRE (21.0.9+11-LTS), built on 2024-08-05T00:00:00Z by "root" with gcc 11.5.0 20240719 (Red Hat 11.5.0-5)
+
+END.
