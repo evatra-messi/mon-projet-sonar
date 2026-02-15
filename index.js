@@ -1,11 +1,10 @@
-public class Main {
-    public static void main(String[] args) {
-        // 1. Un secret en clair (Erreur de sécurité)
-        String password = "admin_password_123"; 
-
-        // 2. Une variable qui ne sert à rien (Code Smell)
-        int variableInutile = 10; 
-
-        System.out.println("Test Issues");
+// Ajoute ça dans ton index.js
+var x = 10; 
+if (x == 10) {
+    if (x == 10) {
+        if (x == 10) {
+            console.log("Trop de niveaux d'imbrication !");
+        }
     }
 }
+eval("var secret = 'mauvaise_pratique'"); // Sonar déteste 'eval'
