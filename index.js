@@ -1,5 +1,5 @@
 // Ajoute ça dans ton index.js
-var x = 10; 
+const x = 10; 
 if (x == 10) {
     if (x == 10) {
         if (x == 10) {
