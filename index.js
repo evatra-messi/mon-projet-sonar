@@ -1,15 +1,11 @@
-function verifConnexion(user) {
-    // Alerte : Mot de passe en clair (Vulnérabilité)
-    var password = "admin_password_123"; 
+public class Main {
+    public static void main(String[] args) {
+        // 1. Un secret en clair (Erreur de sécurité)
+        String password = "admin_password_123"; 
 
-    if (user == "admin") {
-        return true;
+        // 2. Une variable qui ne sert à rien (Code Smell)
+        int variableInutile = 10; 
+
+        System.out.println("Test Issues");
     }
-
-    // Alerte : Code mort (ne sera jamais atteint)
-    return false;
-    console.log("Tentative de connexion"); 
 }
-
-Enregistre ce fichier
-// Test final ngrok
