@@ -24,8 +24,12 @@ jobs:
           severity: 'CRITICAL,HIGH'
 
       # --- ÉTAPE SONARQUBE : Qualité du code ---
-      - name: SonarQube Scan
+     - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: https://elia-emanant-aliya.ngrok-free.dev # Ton lien ngrok
+          SONAR_HOST_URL: https://elia-emanant-aliya.ngrok-free.dev
+        with:
+          args: >
+            -Dsonar.projectKey=mon-projet-test
+            -Dsonar.javascript.node.maxspace=4096
