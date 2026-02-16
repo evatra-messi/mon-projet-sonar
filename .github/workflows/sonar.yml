@@ -14,6 +14,7 @@ jobs:
         with:
           fetch-depth: 0
 
+      # 1. Analyse de Sécurité avec Trivy
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
@@ -21,11 +22,24 @@ jobs:
           format: 'table'
           severity: 'CRITICAL,HIGH'
 
-      - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v6 # La version recommandée par ton log
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: https://70f17292c49c9fb6-154-124-201-171.serveousercontent.com
+      # 2. Installation de Java (nécessaire pour le scanner Sonar)
+      - name: Setup Java
+        uses: actions/setup-java@v4
         with:
-          args: >
+          distribution: 'temurin'
+          java-version: '17'
+
+      # 3. Installation du Scanner SonarQube sur l'agent GitHub
+      - name: Install SonarScanner
+        run: |
+          npm install -g sonar-scanner
+
+      # 4. Analyse de Qualité (envoi vers ton SonarQube local via Serveo)
+      - name: SonarQube Scan
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey=mon-projet-test \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=https://70f17292c49c9fb6-154-124-201-171.serveousercontent.com \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
             -Dsonar.scanner.jre.provisioning=false
