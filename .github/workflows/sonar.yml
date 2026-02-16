@@ -21,7 +21,7 @@ jobs:
           format: 'table'
           severity: 'CRITICAL,HIGH'
 
-      - name: SonarQube Scan
+     - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -30,3 +30,4 @@ jobs:
           args: >
             -Dsonar.projectKey=mon-projet-test
             -Dsonar.scanner.skipScmCheck=true
+            -Dsonar.scanner.jre.provisioning=false
