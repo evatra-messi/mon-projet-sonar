@@ -22,12 +22,10 @@ jobs:
           severity: 'CRITICAL,HIGH'
 
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
+        uses: sonarsource/sonarqube-scan-action@v3 # Changement de version master -> v3
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://70f17292c49c9fb6-154-124-201-171.serveousercontent.com
         with:
           args: >
             -Dsonar.projectKey=mon-projet-test
-            -Dsonar.scanner.skipScmCheck=true
-            -Dsonar.scanner.jre.provisioning=false
