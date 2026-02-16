@@ -21,11 +21,13 @@ jobs:
           format: 'table'
           severity: 'CRITICAL,HIGH'
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v3 # Changement de version master -> v3
+        uses: SonarSource/sonarqube-scan-action@v4 # On passe à la V4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://70f17292c49c9fb6-154-124-201-171.serveousercontent.com
-        with:
-          args: >
-            -Dsonar.projectKey=mon-projet-test
