@@ -14,22 +14,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      # --- ÉTAPE TRIVY : Scan du code ---
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: 'fs' # Scan du système de fichiers
+          scan-type: 'fs'
           format: 'table'
-          exit-code: '0'  # '1' si tu veux bloquer le pipeline en cas de vulnérabilité
           severity: 'CRITICAL,HIGH'
 
-      # --- ÉTAPE SONARQUBE : Qualité du code ---
-     - name: SonarQube Scan
+      - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://elia-emanant-aliya.ngrok-free.dev
-        with:
-          args: >
-            -Dsonar.projectKey=mon-projet-test
-            -Dsonar.javascript.node.maxspace=4096
