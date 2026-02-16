@@ -25,4 +25,4 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: https://elia-emanant-aliya.ngrok-free.dev
+          SONAR_HOST_URL:  https://70f17292c49c9fb6-154-124-201-171.serveousercontent.com
