@@ -1,17 +1,31 @@
-name: SonarQube Analysis
+name: SonarQube & Trivy Analysis
+
 on:
   push:
     branches:
-      - main  # Se déclenche quand tu pousses sur main
+      - main
+
 jobs:
-  sonar:
+  security-and-quality:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Scanner Sonar
+
+      # --- ÉTAPE TRIVY : Scan du code ---
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs' # Scan du système de fichiers
+          format: 'table'
+          exit-code: '0'  # '1' si tu veux bloquer le pipeline en cas de vulnérabilité
+          severity: 'CRITICAL,HIGH'
+
+      # --- ÉTAPE SONARQUBE : Qualité du code ---
+      - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_HOST_URL: https://elia-emanant-aliya.ngrok-free.dev # Ton lien ngrok
